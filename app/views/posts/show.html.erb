@@ -5,5 +5,5 @@
 작성자: <%= @post.username %> <br>
 내용: <%= @post.content %> <br>
 <a href="/posts/<%=@post.id%>/edit">글 수정</a>
-<a href="/posts/<%=@post.id%>" datamethod="delete">글 삭제</a><br>
+<a href="/posts/<%=@post.id%>" data-method="delete" data-confirm="지울꺼여??">글 삭제</a><br>
 <a href="/">홈으로</a>
