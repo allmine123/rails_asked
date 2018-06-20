@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
       <tr>
         <th scope="row"><%= post.id %></th>
-        <td><a href="/posts/<%=post.id%>/show"><%= post.title %></a></td>
+        <td><a href="/posts/<%=post.id%>"><%= post.title %></a></td>
         <td><%= post.username %></td>
         <td><%= post.created_at %></td>
         <td><%= post.updated_at %></td>
