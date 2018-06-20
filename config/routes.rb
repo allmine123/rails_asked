@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   put 'posts/:id' => 'posts#update'
 
-  get 'posts/:id/destroy' => 'posts#destroy'
+  delete 'posts/:id' => 'posts#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
