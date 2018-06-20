@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     post = Post.create(username: params[:username],
                        title: params[:title],
                        content: params[:content])
-    redirect_to "/"
+    #redirect_to "/"
   end
 
   def show
