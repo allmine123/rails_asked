@@ -1,0 +1,9 @@
+<h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+글 번호: <%= @post.id %> <br>
+제 목: <%= @post.title %> <br>
+작성자: <%= @post.username %> <br>
+내용: <%= @post.content %> <br>
+<a href="/posts/<%=@post.id%>/edit">글 수정</a>
+<a href="/posts/<%=@post.id%>/destroy">글 삭제</a><br>
+<a href="/">홈으로</a>

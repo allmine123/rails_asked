@@ -1,0 +1,8 @@
+<h1>Posts#edit</h1>
+<p>수정하는 곳</p>
+<form action="/posts/<%= @post.id%>/update">
+  제목: <input type="text" name="title" value="<%= @post.title %>"> <br>
+  작성자: <input type="text" name="username" value="<%= @post.username %>" readonly> <br>
+  내용: <textarea name="content"><%= @post.content %></textarea> <br>
+  <input type="submit"value="수정">
+</form>
