@@ -1,0 +1,7 @@
+<h1>로그인</h1>
+<form action="/loginprocess" method="post">
+이메일 : <input type="email" name="email"> <br/>
+비밀번호 : <input type="password" name="password"> <br/>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="submit"/>
+</form>
