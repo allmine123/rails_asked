@@ -9,5 +9,14 @@
       <a class="nav-item nav-link" href="/">Posts</a>
       <a class="nav-item nav-link" href="/signup">User</a>
     </div>
+    <div class="nav justify-content-end">
+      <% if current_user %>
+        <%= "#{current_user.username}님" %>
+        <a href="/logout">로그아웃</a>
+        <% else %>
+        <a href="/signup">회원가입</a>
+        <a href="/login">로그인</a>
+        <% end %>
+    </div>
   </div>
 </nav>

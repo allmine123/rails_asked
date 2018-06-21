@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
       @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def authorize
+    if current_user.nil?
+      flash[:alert] = "로그인을 하거라."
+      redirect_to '/'
+    end
+  end
+
 end

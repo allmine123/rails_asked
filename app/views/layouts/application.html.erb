@@ -14,13 +14,13 @@
 
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/flash' %>
-    <% if current_user %>
+    <!-- <% if current_user %>
       <%= "#{current_user.username}님" %>
       <a href="/logout">로그아웃</a>
       <% else %>
       <a href="/signup">회원가입</a>
       <a href="/login">로그인</a>
-      <% end %>
+      <% end %> -->
     <%= yield %>
   </div>
 

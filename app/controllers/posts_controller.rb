@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authorize, except: [:index]
+
   def index
     @posts = Post.all
   end
@@ -7,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create(username: params[:username],
+    post = Post.create(username: current_user.username,
                        title: params[:title],
                        content: params[:content])
     flash[:notice] = "글이 작성되었습니다."
@@ -28,7 +31,7 @@ class PostsController < ApplicationController
                 title: params[:title],
                 content: params[:content])
     flash[:notice] = "글이 수정되었습니다."
-    redirect_to "/posts/#{post.id}/show"
+    redirect_to "/posts/#{post.id}"
   end
 
   def destroy
