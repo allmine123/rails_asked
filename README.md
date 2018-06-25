@@ -1,19 +1,56 @@
-### ASKED
+- - ### ASKED : rails new asked / rails s -b 0.0.0.0
 
-- posts 컨트롤러
-  - `index`
-  - Create: `new`, `create`
-  - Read: `show`
-  - Update: `edit`, `update`
-  - Delete: `destroy`
-- post모델
-  - string `username`
-  - string`title`
-  - text`content`
-- user모델
-  - string`username`
-  - string `email`
-  - string`password`
+    * posts 컨트롤러 `rails g controller posts index new create show edit update destroy` 
+
+      * `index` 
+
+        * 모든 것을 보여준다.
+
+      * Create : `new` `create`
+
+        * `new`
+
+          form을 보여준다.
+
+        * `create`
+
+          * form 데이터를 받는다. (params)
+          * Post에 Create 한다.
+
+      * Read : `show`
+
+        * Post 중에 하나를 선택한다.
+
+      * Update : `edit` `update`
+
+        * `edit`
+
+          form을 보여준다
+
+        * `update`
+
+          * form 데이터를 받는다. (params)
+          * Post 중에 하나를 선택한다.
+          * update한다.
+
+      * Delete : `destroy`
+
+        * Post 중에 하나를 선택한다.
+        * 삭제한다.
+
+    * users 컨트롤러 `rails g controller users index new create`
+
+    * post 모델 `rails g model post username:string title:string content:text` 
+
+      * string `username`
+      * string `title`
+      * text `content`
+
+    * user 모델
+
+      * string `username`
+      * string `email`
+      * string `password`
 
 
 
@@ -192,6 +229,7 @@ end
 # app/controller/application_controller.rb
 # view에서도 활용가능한 메소드로 만드는 법
 helper_method :current_user
+
 def current_user
     # @user에 값이 있으면 DB에 쿼리를 날리지 않는다.
     @user ||== User.find(params[:id]) if session[:user_id]
