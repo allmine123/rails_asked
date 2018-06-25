@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create(username: current_user.username,
+    post = Post.create(user_id: current_user.id,
                        title: params[:title],
                        content: params[:content])
     flash[:notice] = "글이 작성되었습니다."
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(username: params[:username],
+    post.update(user_id: current_user.id,
                 title: params[:title],
                 content: params[:content])
     flash[:notice] = "글이 수정되었습니다."

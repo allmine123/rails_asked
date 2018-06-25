@@ -15,16 +15,18 @@ Rails.application.routes.draw do
   #
   # delete 'posts/:id' => 'posts#destroy'
 
-  resources :posts
+
 
   get 'users/index'
   get '/signup' => 'users#new'
   post 'users' => 'users#create'
-  get '/login' => 'users#login'
-  post '/loginprocess' => 'users#loginprocess'
-  get '/logout' => 'users#logout'
+  get '/users/:id/posts' => 'users#posts'
 
-
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
+  resources :posts
 
 
 
